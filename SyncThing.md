@@ -1,6 +1,6 @@
 # SyncThing
 
-## Installation
+## Installation Debian/Ubuntu/Mint
 
 Add release key
 ```
@@ -17,3 +17,17 @@ Update and install syncthing:
 sudo apt-get update
 sudo apt-get install syncthing
 ```
+
+## Configure for remote access
+
+Change configuration address
+
+```
+cd ~/.config/syncthing/
+cp config.xml config.xml.old
+nano config.xml
+``` 
+ 
+## NFS Sharing
+
+ https://askubuntu.com/questions/7117/which-to-use-nfs-or-samba
