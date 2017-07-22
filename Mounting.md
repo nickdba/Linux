@@ -9,6 +9,8 @@ However if tou have a network share and you want a permanent mount this is the w
 First we will check all devices the plugged in.
 ```
 sudo parted -l
+or 
+sudo sfdisk -l
 ```
 Identify the disk you will be mounted.
 It usually looks something like `/dev/sda1`
