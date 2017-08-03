@@ -38,7 +38,11 @@ sudo systemctl start nfs-kernel-server.service
 sudo apt install nfs-common
 ```
 
-fist we create a directory and we 
+Fist we create a directory and we want to mount content to.
+
+```bash
+sudo mkdir mybook300G
+```
 
 test connection 
 
@@ -49,6 +53,12 @@ sudo mount 192.168.0.36:/mnt/seagate5T /media/seagate5T
 ```
 sudo cp fstab fstab.original
 sudo nano fstab
+```
+
+```
+# External Drives
+# MyBook300G over the nfs network
+192.168.0.36:/mnt/mybook300G    /media/mybook300G	nfs     auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800,user  0       2
 ```
 
 
