@@ -27,7 +27,3 @@ cd ~/.config/syncthing/
 cp config.xml config.xml.old
 nano config.xml
 ``` 
- 
-## NFS Sharing
-
- https://askubuntu.com/questions/7117/which-to-use-nfs-or-samba
