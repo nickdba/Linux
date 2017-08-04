@@ -46,43 +46,35 @@ mount -t ntfs -o -o uid=pi,gid=pi /dev/sda1 /mnt/mydisk
 To accomplish a permanent mount you need modify `/etc/fstab` file.
 First we will get the UUID for the disk.
 
-```
+```bash
 sudo blkid
 ```
 
 Search for a like looking something like 
 
-```
+```bash
 /dev/sda1: LABEL="My Book" UUID="AA9D-F0BC" TYPE="vfat" PARTUUID="44fdfe06-01"
 ```
 
 Copy UUID
 
-```
+```bash
 sudo cp /etc/fstab /etc/fstab.old
 sudo nano /etc/fstab    
 ```
 
 And add the following lines 
 
-```
+```bash
 # mydisk mount
-UUID=AA9D-F0BC   /mnt/mydisk  ntfs    defaults,uid=pi,gid=pi        1       1
+UUID=AA9D-F0BC   /mnt/mydisk  ntfs    defaults,uid=pi,gid=pi        0       2
 ```
 
 To save `CTRL+X` -> `Y` -> `Enter`
 
-sudo mount -t ntfs  /dev/sdd2 /mnt/mydisk 
+Check the mount.
 
-
-
-```
-df -h
+```bash
+sudo mount -a
+sudo df -Th
 ``` 
-
-Option -h means human readable.
-
-
-
-
-
