@@ -5,8 +5,8 @@ If focuses on NFS version 3.
 
 ## Server configuration
 
-On the server, open the terminal and install nfs-kernel-server module and rpcbind.
-The rpcbind utility converts RPC program numbers into universal addresses.
+On the server, open the terminal and install `nfs-kernel-server` module and `rpcbind`.
+The `rpcbind` utility converts RPC program numbers into universal addresses.
 
 ```bash
 sudo apt-get update
@@ -14,9 +14,10 @@ sudo apt-get install nfs-kernel-server
 sudo apt-get install rpcbind
 ```
 
-Configure your shares by editing /etc/exports. 
+Configure your shares by editing `/etc/exports`. 
 
 ```bash
+sudo cp /etc/exports /etc/exports.original
 sudo nano /etc/exports
 ```
 
@@ -26,7 +27,7 @@ Here's a line from my old configuration:
 /mnt/mybook300G         192.169.0.*(rw,sync,no_root_squash)
 ```
 
-Start the nfs and rpcbind services
+Start the `nfs` and `rpcbind` services
 
 ```bash
 sudo service rpcbind start
@@ -46,8 +47,8 @@ And we will change the ownership and permissions on the folder.
 
 ```bash
 sudo mkdir mybook300G
-sudo chwon nicky/nicky
-sudo chmod 750 
+sudo chwon nicky:nicky mybook300G
+sudo chmod 770 mybook300G
 ```
 
 Test connection by mounting the share. The ip address is the ip of the server.
@@ -55,7 +56,7 @@ Check all mount with `df` command.
 Un-mount using `umount` command.
 
 ```bash
-sudo mount -o uid=nicky,guid=nicky 192.169.0.12:/mnt/mybook300G /media/mybook300G
+sudo mount -o uid=nicky,gid=nicky 192.169.0.12:/mnt/mybook300G /media/mybook300G
 sudo df -Th
 sudo umount /media/mybook300G
 ```
