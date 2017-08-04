@@ -14,7 +14,7 @@ sudo apt-get install nfs-kernel-server
 sudo apt-get install rpcbind
 ```
 
-Configure your shares by editing `/etc/exports`. 
+Configure your shares by editing `/etc/exports`.
 
 ```bash
 sudo cp /etc/exports /etc/exports.original
@@ -75,6 +75,7 @@ Add the following at the end of `fstab`.
 # MyBook300G over the nfs network
 192.169.0.12:/mnt/mybook300G  /media/mybook300G  nfs  auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800,user  0 2
 ```
+
 First we specify the server ip and mount point and mount type will be `nfs`.
 Option `nolock` is desirable as if the share is not found at the boot time it will just continue.
 Option `user` will allow the share to be mounted as the user rather than root.
