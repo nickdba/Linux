@@ -24,7 +24,13 @@ sudo nano /etc/exports
 Here's a line from my old configuration:
 
 ```bash
-/mnt/mybook300G         192.169.0.*(rw,sync,no_root_squash)
+/mnt/mybook300G         192.169.0.*(rw,sync,no_root_squash,no_subtree_check)
+```
+
+Check the file after modifications
+
+```bash
+sudo exportfs -ra
 ```
 
 Start the `nfs` and `rpcbind` services
@@ -32,6 +38,8 @@ Start the `nfs` and `rpcbind` services
 ```bash
 sudo service rpcbind start
 sudo systemctl start nfs-kernel-server.service
+
+
 ```
 
 That is all for the server configuration.
