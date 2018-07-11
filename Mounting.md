@@ -11,7 +11,7 @@ First we will check all devices the plugged in.
 ```
 sudo parted -l
 or 
-sudo sfdisk -l
+sudo fdisk -l
 ```
 Identify the disk you will be mounted.
 It usually looks something like `/dev/sda1`
@@ -54,12 +54,16 @@ sudo cp /etc/fstab /etc/fstab.old
 sudo nano /etc/fstab    
 ```
 
-### For etx3 format systems
+### For etx4 format systems
+And add the following line 
+```
+UUID=AA9D-F0BC   /mnt/mydisk  ext4   defaults,nofail,x-systemd.device-timeout=1      1       1
+```
 
 ### For vfat and ntfs formats systems
 And add the following line 
 ```
-UUID=AA9D-F0BC   /mnt/mydisk  ntfs    defaults,uid=pi,gid=pi        1       1
+UUID=AA9D-F0BC   /mnt/mydisk  ntfs    defaults,nofail,x-systemd.device-timeout=1,uid=pi,gid=pi        1       2
 ```
 
 
