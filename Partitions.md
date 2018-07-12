@@ -12,6 +12,8 @@ To show disks and partitions
 fdisk -l
 or
 parted -l
+or
+lsblk
 ```
 
 To work on a disk;   
