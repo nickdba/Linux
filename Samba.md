@@ -1,4 +1,72 @@
-# Samba on Linux Mint and share folders with Windows 10
+# Samba configuration on Ubuntu/Linux Mint and Win 10
+
+## Setting up Linux server
+
+Install and configure samba.
+Open a terminal session and run the installation and user creation.
+Replace <variables> appropriately.
+
+```bash
+sudo su
+apt update
+apt install samba
+smbpasswd -a <user_name>
+mkdir <samba_share_folder>
+chown -R <user_name>:<user_name> <samba_share_folder>
+chmod -R 775 <samba_share_folder>
+```
+
+Then we will modify samba configuration file, but first we will backup the original just in case.
+
+```bash
+cd /etc/samba/
+cp smb.conf smb.conf.original
+nano smb.conf
+```
+
+At the end of the file
+
+```bash
+[<share_name>]
+path = <samba_share_folder>
+valid users = <user_name>
+read only = no
+```
+
+Test parameters and restart the smbd service
+
+```bash
+testparm
+systemctl restart smbd
+systemclt enable smbd
+```
+
+## Accessing the files from another Linux machine
+
+From the console
+
+```bash
+smbclient //<samba_server_ip>/<share_folder> -U <user_name>
+ls
+```
+
+Using Nemo file and folder default organizer for Linux Mint, type in the address:
+
+```bash
+smb://<samba_server_ip>
+``` 
+
+Then type in the user credentials and add the folder to bookmarks.
+
+## Accessing the files from Windows 10
+
+In the explorer
+
+```bash
+\\<samba_server_ip>
+```
+
+Then type in the user credentials and add the folder to bookmarks.
 
 ## Accessing Windows 10 shares from Linux Mint 
 
@@ -22,48 +90,15 @@ Then we will create a share on windows.
 On the firewall add the Linux ip for both incoming and outgoing as trusted.
 This is an important step and can be fiddly, depending on the firewall you are using.
 
-We wil move next on the linux machine.
+We need to modify the samba configuration file, but first we will backup the original file just in case.
 
 Install and configure samba.
 Open a terminal session and run the installation and user creation.
 
-```bash
-sudo apt update
-sudo apt install samba
-sudo apt install cifs-utils
-sudo apt install smbclient
-sudo smbpasswd -a <user_name>
-```
-
-Next we will verify the connection
-
-```bash
-smbclient //<Win ip address>/<Share_Folder> -U <Win_Username>
-ls
-```
-
-You will be prompted for win user password, then you should now see the content of the shared folder. 
 
 If host cannot be resolved verify the firewall rules on both machine and make sure both machine can ping each other.
 
-Using Nemo file and folder default organizer for Mint, type in the address:
-
-```bash
-smb://<Win_comp_name>/<Share_Folder>
-``` 
-
-Put in the credential details and save them.
-Also you can add this path to book marks by pressing CTRL+D.
-
 ## Accessing Linux Mint shares from Windows 10
-
-We need to modify the samba configuration file, but first we will backup the original file just in case.
-
-```bash
-cd /etc/samba/
-sudo cp smb.conf smb.conf.original
-sudo nano smb.conf
-```
 
 Add/modify the following lines to the following file.
 Remove anything else from the file.
