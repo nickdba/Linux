@@ -27,7 +27,7 @@ Add the following at the end of /etc/bash.bashrc (or ~/.bashrc for current user)
 
 ```bash
 # cowsay magic
-if [ -x /usr/games/cowsay -a -x /usr/games/fortune -a -x /usr/bin/boxes]; then
+if [ -x /usr/games/cowsay -a -x /usr/games/fortune -a -x /usr/bin/boxes ]; then
     fortune | cowthink -f `ls -1 /usr/share/cowsay/cows/ | sort -R | head -1` -n | boxes -d columns
 fi
 ```
