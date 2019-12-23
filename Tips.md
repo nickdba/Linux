@@ -2,7 +2,7 @@
 
 Tips for making your linux experience more enjoyable.
 
-## Bash auto-complete case insensitive.
+## Bash auto-complete case insensitive
 
 Create .inputrc file that icludes /etc/inputrc and sets completion-ignore-case On.
 
@@ -18,7 +18,7 @@ Install few programs
 ```bash
 sudo -i
 apt install fortune cowsay boxes
-vi /etc/bash.bashrc 
+vi /etc/bash.bashrc
 ```
 
 Add the following at the end of /etc/bash.bashrc (or ~/.bashrc for current user)
