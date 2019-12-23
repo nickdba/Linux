@@ -17,9 +17,7 @@ Install few programs
 
 ```bash
 sudo -i
-apt install fortune
-apt install cowsay
-apt install boxes
+apt install fortune cowsay boxes
 vi /etc/bash.bashrc 
 ```
 
@@ -28,6 +26,6 @@ Add the following at the end of /etc/bash.bashrc (or ~/.bashrc for current user)
 ```bash
 # cowsay magic
 if [ -x /usr/games/cowsay -a -x /usr/games/fortune -a -x /usr/bin/boxes ]; then
-    fortune | cowthink -f `ls -1 /usr/share/cowsay/cows/ | sort -R | head -1` -n | boxes -d columns
+    fortune | cowthink -f `ls /usr/share/cowsay/cows/ | shuf -n1` -n | boxes -d columns
 fi
 ```
