@@ -11,21 +11,15 @@ if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
 echo 'set completion-ignore-case On' >> ~/.inputrc
 ```
 
-## Cowsay fortune
+## Longer sudo time
 
-Install few programs
-
-```bash
-sudo -i
-apt install fortune cowsay boxes
-vi /etc/bash.bashrc
-```
-
-Add the following at the end of /etc/bash.bashrc (or ~/.bashrc for current user)
+Add a line to /etc/sudoers with the new number in minutes.
 
 ```bash
-# cowsay magic
-if [ -x /usr/games/cowsay -a -x /usr/games/fortune -a -x /usr/bin/boxes ]; then
-    fortune | cowthink -f `ls /usr/share/cowsay/cows/ | shuf -n1` -n | boxes -d columns
-fi
+sudo visudo     # Edits /etc/sudoers
 ```
+
+Modify this line:
+```Defaults        env_reset```  
+With this line:
+```Defaults        env_reset,timestamp_timeout=30```

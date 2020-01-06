@@ -1,4 +1,4 @@
-# Partititons
+# Partitions
 
 To show usage
 
@@ -16,8 +16,8 @@ or
 lsblk
 ```
 
-To work on a disk;   
-Do Not pass the partition (/dev/sda1) but rather the disk. 
+To work on a disk;  
+Do Not pass the partition (/dev/sda1) but rather the disk.
 
 ```bash
 fdisk /dev/sda
@@ -36,4 +36,3 @@ To show uuid of all partitions
 ```bash
 blkid
 ```
-
