@@ -22,4 +22,11 @@ sudo visudo     # Edits /etc/sudoers
 Modify this line:
 ```Defaults        env_reset```  
 With this line:
-```Defaults        env_reset,timestamp_timeout=30```
+```Defaults        env_reset,timestamp_timeout=60```
+
+## Set the default text editor
+
+```bash
+sudo update-alternatives --config editor
+```
+
