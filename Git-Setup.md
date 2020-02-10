@@ -30,6 +30,13 @@ Start ssh agent and add the new key to the authentication agent
   - <password>
 ```
 
+You might need to install keychain to memorize the password.
+
+```bash
+~> sudo apt-get install keychain
+~> eval `keychain --eval id_ed25519`
+```
+
 ## Use a repo
 
 Add the content of your id_ed25519.pub to [github](https://github.com/settings/keys).  
