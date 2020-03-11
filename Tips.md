@@ -29,4 +29,3 @@ With this line:
 ```bash
 sudo update-alternatives --config editor
 ```
-
