@@ -29,3 +29,10 @@ With this line:
 ```bash
 sudo update-alternatives --config editor
 ```
+
+## Pulse audio remove flat volume
+
+```bash
+sudo vi /etc/pulse/daemon.conf
+ # set flat-volumes = no by removing the comment in front `;`
+```

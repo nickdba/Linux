@@ -12,7 +12,7 @@ Check the current configuration and modfy the file from DHCP4 to a static addres
 
 ```bash
 ~> ip address
-~> sudo vi /etc/netplan/00-installer-config.yaml
+~> vi /etc/netplan/00-installer-config.yaml
 ```
 
 ```bash
