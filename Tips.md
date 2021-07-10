@@ -6,9 +6,9 @@ Tips for making your linux experience more enjoyable.
 
 If you have root permissions and want to change this for all users
 
-```console
-$ vim /etc/inputrc
-$ set completion-ignore-case On # Add this line at the end of the file
+```bash
+vim /etc/inputrc
+set completion-ignore-case On # Add this line at the end of the file
 ```
 
 Otherwise you will change this only for the current user.
