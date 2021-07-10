@@ -4,6 +4,15 @@ Tips for making your linux experience more enjoyable.
 
 ## Bash auto-complete case insensitive
 
+If you have root permissions and want to change this for all users
+
+```console
+$ vim /etc/inputrc
+$ set completion-ignore-case On # Add this line at the end of the file
+```
+
+Otherwise you will change this only for the current user.
+
 Create .inputrc file that icludes /etc/inputrc and sets completion-ignore-case On.
 
 ```bash
