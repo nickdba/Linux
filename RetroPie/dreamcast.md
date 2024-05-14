@@ -11,15 +11,18 @@ You will need booth `dc_boot.bin` and `dc_flash.bin` files put in Retropie\Bios 
 
 ## Roms
 
-Download roms from trusted sites like [emuland](https://www.emu-land.net/en/consoles/dreamcast/bios).  
+Download roms from trusted sites like [romsfun](https://romsfun.com/roms) and [emulatorgames](https://www.emulatorgames.net/roms/).  
 Put the roms in Retropie/roms/dreamcast folder.  
 Extensions supported: .cue .cdi .chd .gdi  
 Some interesting titles are:
 
+* Crazy Taxy
+* Crazy Taxy 2
+* Rayman 2 The Great Escape
+* Shenmue
+* Shenmue II
 * Sonic adventure
 * Sonic adventure 2
-* Crazy Taxy
-* Rayman Legends
 
 ## Setting
 
