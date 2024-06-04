@@ -28,6 +28,7 @@ Some interesting titles:
 * Grand Theft Auto III series (5 titles)
 * Max Payne series
 * Crash Bandicoot series
+* Rayman series
   
 ## Settings
 
