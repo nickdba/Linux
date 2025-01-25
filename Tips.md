@@ -19,6 +19,12 @@ if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
 echo 'set completion-ignore-case On' >> ~/.inputrc
 ```
 
+## Set the default text editor
+
+```bash
+sudo update-alternatives --config editor
+```
+
 ## Longer sudo time
 
 Add a line to /etc/sudoers with the new number in minutes.
@@ -31,12 +37,6 @@ Modify this line:
 ```Defaults        env_reset```  
 With this line:
 ```Defaults        env_reset,timestamp_timeout=60```
-
-## Set the default text editor
-
-```bash
-sudo update-alternatives --config editor
-```
 
 ## Pulse audio remove flat volume
 
