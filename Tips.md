@@ -21,8 +21,17 @@ echo 'set completion-ignore-case On' >> ~/.inputrc
 
 ## Set the default text editor
 
+For Ubuntu disto and derivates
+
 ```bash
 sudo update-alternatives --config editor
+```
+
+For the rest of distros edit `/etc/environment` and log out.
+
+```bash
+sudo vim /etc/environment
+    EDITOR=vim
 ```
 
 ## Longer sudo time
